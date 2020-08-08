@@ -11,6 +11,16 @@
 //    list.insertLast('d');
 //    fromLast(list, 2).data // 'b'
 
-function fromLast(list, n) {}
+const L = require('./linkedlist');
+const List = L.LinkedList;
+const Node = L.Node;
+function fromLast(list, n) {
+
+
+return this.list.getAt(sz-n+1);
+
+
+
+}
 
 module.exports = fromLast;

@@ -11,7 +11,20 @@
 //   b.next = c;
 //   c.next = b;
 //   circular(l) // true
+const L = require('./linkedlist');
+const list = L.LinkedList;
+const Node = L.Node;
+function circular(list) {
+    var curr= this.list.head;
+    if(curr==null) return true;
 
-function circular(list) {}
+    var currnext= curr.next;
+    while (currnext != NULL && currnext != curr)
+       currnext = currnext.next;
+
+       return (currnext==curr);
+
+
+}
 
 module.exports = circular;
