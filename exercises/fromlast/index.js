@@ -15,12 +15,12 @@ const L = require('./linkedlist');
 const List = L.LinkedList;
 const Node = L.Node;
 function fromLast(list, n) {
-
-
-return this.list.getAt(sz-n+1);
-
-
-
+    var cnt=n;
+    while(cnt){
+        list.removeLast();
+        cnt--;
+    }
+    return list.getLast()
 }
 
 module.exports = fromLast;

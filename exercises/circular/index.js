@@ -15,15 +15,19 @@ const L = require('./linkedlist');
 const list = L.LinkedList;
 const Node = L.Node;
 function circular(list) {
-    var curr= this.list.head;
-    if(curr==null) return true;
 
-    var currnext= curr.next;
-    while (currnext != NULL && currnext != curr)
-       currnext = currnext.next;
+    var ff = list.getFirst();
+    var ss = list.getFirst();
 
-       return (currnext==curr);
+    while(ff!=null && ss.next!=null && ff.next!=null  && ss!=null){
 
+        ff= ff.next;
+        ss = ss.next.next;
+        if(ff == ss){
+            return true;
+        }
+    }
+    return false;
 
 }
 

@@ -9,23 +9,21 @@
 //   reverseInt(-90) === -9
 
 function reverseInt(n) {
-    var res=0;
+    var sum=0;
+   
     var f=0;
-    if(n<0){
-       f=1;
-       n= -n;
+    if (n<0){
+        n = n *-1;
+        f=1;
     }
-
-    while(n!=0){
-        var r= n %10;;
-        n=n/10;
-        if(n>0) res= (res+r) * 10;
-        else res+=r;
-
-
+    while(n>0){
+       
+        sum = sum * 10 + n%10;
+        n = parseInt(n / 10);
     }
-    if(f) return -res;
-    else return res;
+   
+    if(f) return -sum;
+    else return sum
 }
 
 module.exports = reverseInt;

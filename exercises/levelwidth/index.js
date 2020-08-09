@@ -12,49 +12,37 @@
 // Answer: [1, 3, 2]
  
 
-function getWidth(root, level)  
-{  
+// function getWidth(root, level)  
+// {  
       
-    if(root == null)  
-        return 0;  
+//     if(root == null)  
+//         return 0;  
           
-    if(level == 1)  
-        return 1;  
+//     if(level == 1)  
+//         return 1;  
                   
-    else if (level > 1)  
-        return getWidth(root.left, level - 1) +  
-                getWidth(root.right, level - 1);  
-}  
+//     else if (level > 1)  
+//         return getWidth(root.left, level - 1) +  
+//                 getWidth(root.right, level - 1);  
+// }  
 
-function height(node)  
-{  
-    if (node == null)  
-        return 0;  
-    else
-    {  
+// function height(node)  
+// {  
+//     if (node == null)  
+//         return 0;  
+//     else
+//     {  
        
-        var lHeight = height(node.left);  
-        var rHeight = height(node.right);  
+//         var lHeight = height(node.left);  
+//         var rHeight = height(node.right);  
      
           
-        return (lHeight > rHeight)? (lHeight + 1): (rHeight + 1);  
-    }  
-}  
+//         return (lHeight > rHeight)? (lHeight + 1): (rHeight + 1);  
+//     }  
+// }  
 
 function levelWidth(root) {
-   
-    var width;
     
-    var h = height(root);  
-    var i;  
-
-    for(i = 1; i <= h; i++)  
-    {  
-        width = getWidth(root, i);  
-        add(width);
-        
-    }  
-          
 
 }
 

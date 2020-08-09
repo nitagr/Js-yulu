@@ -9,12 +9,22 @@
 
 function capitalize(str) {
 
-  var s="";
-  s+=str.charAt(0).toUpperCase();
+ var s="";
+ s+= str[0].toUpperCase();
+ var n= str.length;
 
-  s+= str.slice(1);
+ for(let i=1; i<n; i++){
+   if(str[i-1]==' '){
+     s+= str[i].toUpperCase();
 
-  return s;
+   }
+   else{
+    s+= str[i]
+   }
+ }
+ str= s;
+
+ return str;
 }
 
 module.exports = capitalize;
