@@ -47,34 +47,42 @@ function selectionSort(arr) {
 
 
 function merge(left, right) {
-    var resultArray = [], leftIndex = 0, rightIndex = 0;
+  let result = [];
+  let i = 0; 
+  let j = 0;
 
-  
-  while (leftIndex < left.length && rightIndex < right.length) {
-    if (left[leftIndex] < right[rightIndex]) {
-      resultArray.push(left[leftIndex]);
-      leftIndex++; 
+
+  while(i < left.length && j < right.length){
+    if(left[i] > right[j]) {
+      result.push(right[j]);
+      j++;
     } else {
-      resultArray.push(right[rightIndex]);
-      rightIndex++; 
+      result.push(left[i]);
+      i++;
     }
   }
-  return resultArray
-          .concat(left.slice(leftIndex))
-          .concat(right.slice(rightIndex));
+
+  while(i < left.length){
+    result.push(left[i]);
+    i++;
+  }
+
+  while(j < right.length){
+    result.push(right[j]);
+    j++;
+  }
+
+  return result;
 
 }
 
-function mergeSort(arr) {
+function mergeSort(arr, l,r) {
+  if(arr.length <= 1) return arr;
+  let halfPoint = Math.ceil(arr.length / 2);
 
-    if (arr.length <= 1) {
-        return arr;
-    }
-      const middle = Math.floor(arr.length / 2);
-      const left =  mergeSort(arr.slice(0, middle));
-      const right = mergeSort( arr.slice(middle));
-
-      return merge(left, right);
+  let firstHalf = mergeSort(arr.splice(0, halfPoint));
+  let secondHalf = mergeSort(arr.splice(-halfPoint));
+  return merge(firstHalf, secondHalf);
 
 }
 

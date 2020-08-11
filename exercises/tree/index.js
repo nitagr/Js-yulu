@@ -12,23 +12,33 @@
 
 class Node {
     constructor(data){
-        this.data= null;
-        this.par=null;
+        this.data= data;
         this.children=[];
     }
     add(data){
-        return this.data= data;
+         
+         let child= new Node(data);
+         this.children[0]= child;
+
     }
     remove(){
-        return this.data=null;
+       var x= this.children[0];
+       this.children.shift();
+       return x;
     }
+    
 }
 
 class Tree {
     constructor(root){
         this.root=null;
     }
+    traverseDF(){
 
+    }
+    traverseBF(){
+        
+    }
     
 }
 

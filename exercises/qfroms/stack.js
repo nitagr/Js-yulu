@@ -10,6 +10,9 @@ class Stack {
   pop() {
     return this.data.pop();
   }
+  size(){
+    return this.data.length;
+  }
 
   peek() {
     return this.data[this.data.length - 1];
